@@ -1,9 +1,11 @@
 # Core ML libraries
 pandas
 numpy
+tqdm
 matplotlib
 seaborn
 scikit-learn
 xgboost
 catboost
+optuna
 #-e .
