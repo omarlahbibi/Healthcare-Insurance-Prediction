@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Insurance Purchase Prediction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5 p-4 shadow rounded bg-white">
+        <h1 class="text-center mb-4 text-primary">Health Insurance Purchase Prediction</h1>
+        <form action="{{ url_for('predict_datapoint') }}" method="post">
+
+            <!-- ID -->
+            <div class="mb-3">
+                <label class="form-label">id</label>
+                <input class="form-control" type="number" name="id" placeholder="Enter Customer ID" required>
+            </div>
+            
+            <!-- Gender -->
+            <div class="mb-3">
+                <label class="form-label">Gender</label>
+                <select class="form-control" name="Gender" required>
+                    <option selected disabled value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <!-- Age -->
+            <div class="mb-3">
+                <label class="form-label">Age</label>
+                <input class="form-control" type="number" name="Age" placeholder="Enter Age" min="18" max="100" required>
+            </div>
+
+            <!-- Driving Licence -->
+            <div class="mb-3">
+                <label class="form-label">Driving Licence</label>
+                <select class="form-control" name="Driving_Licence" required>
+                    <option selected disabled value="">Has Driving License?</option>
+                    <option value="1">1</option>
+                    <option value="0">0</option>
+                </select>
+            </div>
+
+            <!-- Region Code -->
+            <div class="mb-3">
+                <label class="form-label">Region Code</label>
+                <input class="form-control" type="number" name="Region_Code" placeholder="Enter Region Code (e.g., 28.0)" step="0.1" required>
+            </div>
+
+            <!-- Previously Insured -->
+            <div class="mb-3">
+                <label class="form-label">Previously Insured</label>
+                <select class="form-control" name="Previously_Insured" required>
+                    <option selected disabled value="">Previously Insured?</option>
+                    <option value="1">1</option>
+                    <option value="0">0</option>
+                </select>
+            </div>
+
+            <!-- Vehicle Age -->
+            <div class="mb-3">
+                <label class="form-label">Vehicle Age</label>
+                <select class="form-control" name="Vehicle_Age" required>
+                    <option selected disabled value="">Select Vehicle Age</option>
+                    <option value="< 1 Year">Less than 1 Year</option>
+                    <option value="1-2 Year">Between 1 and 2 Years</option>
+                    <option value="> 2 Years">More than 2 Years</option>
+                </select>
+            </div>
+
+            <!-- Vehicle Damage -->
+            <div class="mb-3">
+                <label class="form-label">Vehicle Damaged Before?</label>
+                <select class="form-control" name="Vehicle_Damage" required>
+                    <option selected disabled value="">Select Option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <!-- Annual Premium -->
+            <div class="mb-3">
+                <label class="form-label">Annual Premium</label>
+                <input class="form-control" type="number" name="Annual_Premium" placeholder="Enter Annual Premium Amount" step="0.01" required>
+            </div>
+
+            <!-- Policy Sales Channel -->
+            <div class="mb-3">
+                <label class="form-label">Policy Sales Channel</label>
+                <input class="form-control" type="number" name="Policy_Sales_Channel" placeholder="Enter Channel Code (e.g., 152)" required>
+            </div>
+
+            <!-- Vintage -->
+            <div class="mb-3">
+                <label class="form-label">Customer Vintage (Days Associated)</label>
+                <input class="form-control" type="number" name="Vintage" placeholder="Enter Number of Days" min="0" required>
+            </div>
+
+            <!-- Submit -->
+            <div class="d-grid mt-4">
+                <button class="btn btn-success btn-lg" type="submit">Predict Insurance Interest</button>
+            </div>
+        </form>
+
+        {% if results is not none %}
+        <div class="alert alert-info mt-4 text-center">
+            <h4>Predicted Insurance Interest: <strong>{{ results }}</strong></h4>
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
