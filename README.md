@@ -2,8 +2,7 @@
 
 ### 🔎 Overview
 
-This repository contains an **end-to-end Machine Learning project** designed to predict **which existing Health Insurance customers are likely to be interested in Vehicle Insurance**.  
-The project follows a **production-ready ML pipeline architecture**, including:
+This repository contains an **end-to-end Machine Learning project** designed to predict **which existing Health Insurance customers are likely to be interested in Vehicle Insurance**. The project follows a simple **production-ready ML pipeline architecture**, including:
 
 - Modularized components  
 - Data preprocessing & transformation  
@@ -18,7 +17,7 @@ This project was developed by following structured, industry-style ML tutorial p
 
 ### 📂 Dataset
 
-- **Source:** https://www.kaggle.com/competitions/massp-health-insurance-prediction/data  
+- **Source:** [Kaggle: MaSSP - Health Insurance Prediction](https://www.kaggle.com/competitions/massp-health-insurance-prediction/data)  
 - **Description:**  
   The dataset contains customer demographics, vehicle details, and policy attributes.  
   The target is whether a customer is interested in purchasing **Vehicle Insurance**.
@@ -43,9 +42,8 @@ This project follows a structured ML pipeline:
 - Stores files inside `/artifacts`
 
 #### **2️⃣ Data Transformation**
-- Handles missing values  
+- Scales numerical features 
 - Encodes categorical features  
-- Scales numerical features  
 - Saves the preprocessing object  
 
 #### **3️⃣ Model Training**
@@ -74,16 +72,12 @@ A simple web interface allowing users to input features and get instant predicti
 
 ---
 
-### 📌 Project Structure
-
----
-
 ### 🚀 How to Run
 
 #### **1️⃣ Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/Healthcare-Insurance-Prediction.git
+git clone git@github.com:omarlahbibi/Healthcare-Insurance-Prediction.git
 cd Healthcare-Insurance-Prediction
 ```
 
