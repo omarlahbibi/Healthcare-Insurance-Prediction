@@ -1,7 +1,5 @@
 # 🏥 Health Insurance Cross Sell Prediction
 
----
-
 ### 🔎 Overview
 
 This repository contains an **end-to-end Machine Learning project** designed to predict **which existing Health Insurance customers are likely to be interested in Vehicle Insurance**.  
@@ -32,7 +30,6 @@ This project was developed by following structured, industry-style ML tutorial p
   - Policy Premium  
   - Policy Sales Channel  
   - Previously Insured  
-  - etc.
 
 ---
 
@@ -59,9 +56,7 @@ This project follows a structured ML pipeline:
 
 #### **4️⃣ Prediction Pipeline**
 - Loads saved preprocessor + model  
-- Generates predictions for both:
-  - Flask app input  
-  - Batch predictions via script  
+- Generates predictions for Flask app inputs 
 
 #### **5️⃣ Flask Application**
 A simple web interface allowing users to input features and get instant predictions.
@@ -81,26 +76,39 @@ A simple web interface allowing users to input features and get instant predicti
 
 ### 📌 Project Structure
 
-Healthcare-Insurance-Prediction/
-│
-├── notebooks/ # Jupyter notebooks for exploration & experiments
-│ ├── data/ # Raw dataset(s)
-│ └── *.ipynb
-│
-├── src/insurance/ # Main package for pipelines & components
-│ ├── components/ # Data ingestion, transformation, model trainer
-│ ├── pipelines/ # train_pipeline.py and predict_pipeline.py
-│ ├── logger.py # Custom logging
-│ └── exception.py # Centralized exception handling
-│
-├── artifacts/ # Stored model, scaler, preprocessed objects etc.
-│
-├── logs/ # Training & prediction logs
-│
-├── app.py # Flask application for deployed model
-├── requirements.txt # Project dependencies
-├── setup.py # Package definition
-├── .gitignore
-└── README.md
-
 ---
+
+### 🚀 How to Run
+
+#### **1️⃣ Clone the repository**
+
+```bash
+git clone https://github.com/your-username/Healthcare-Insurance-Prediction.git
+cd Healthcare-Insurance-Prediction
+```
+
+#### **2️⃣ Create and activate a virtual environment**
+
+```bash
+python -m venv venv
+venv\Scripts\activate      # Windows
+source venv/bin/activate   # Linux/Mac
+```
+
+#### **3️⃣ Install dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+#### **4️⃣ Run the training pipeline**
+
+```bash
+python src/pipeline/train_pipeline.py
+```
+
+#### **5️⃣ Run the Flask web app**
+
+```bash
+python app.py
+```
